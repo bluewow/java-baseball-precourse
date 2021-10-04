@@ -16,7 +16,7 @@
 
 ## 기능 요구사항 분석 + 프로그래밍 요구사항
 - 상대방 역활 (computerPlayer)
-  - generate (1~9 까지 서로 다른 임의의 수 3개를 선택한다)
+  - [x] generate (1~9 까지 서로 다른 임의의 수 3개를 선택한다)
 - game system
   - check value (플레이어가 입력한 숫자에 대한 결과를 출력한다)
     - strike
