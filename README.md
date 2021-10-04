@@ -17,12 +17,15 @@
 ## 기능 요구사항 분석 + 프로그래밍 요구사항
 - 상대방 역활 (computerPlayer)
   - [x] generate (1~9 까지 서로 다른 임의의 수 3개를 선택한다)
-- game system
-  - check value (플레이어가 입력한 숫자에 대한 결과를 출력한다)
+- [x] model, service, view, controller 생성 (역활 분리)
+- [x] game logic 설계 (init, play, end)
+- 플레이어의 입력을 받는다
+- BaseballGame
+  - play (플레이어가 입력한 숫자에 대한 결과를 출력한다)
     - strike
     - ball
     - nothing (out)
   - repeat (게임을 다시 시작하거나 완전히 종료할 수 있는 기능)
   - validation 사용자가 잘못입력한 값에 대한 처리
-- Business Logic과 UI 를 분리한다
+
     
