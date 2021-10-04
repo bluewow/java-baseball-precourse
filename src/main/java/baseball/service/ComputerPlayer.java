@@ -1,5 +1,6 @@
 package baseball.service;
 
+import com.sun.deploy.util.StringUtils;
 import nextstep.utils.Randoms;
 
 import java.util.ArrayList;
@@ -13,11 +14,17 @@ import java.util.stream.Collectors;
  */
 public class ComputerPlayer {
 
+    private List<String> numbers;
+
+    public ComputerPlayer() {
+        numbers = generateNumber();
+    }
+
     /**
      * 1~9 까지 서로 다른 임의의 수 3개를 선택(생성)한다
      * @return 3개의 서로다른 수
      */
-    public List<String> generateNumber() {
+    private List<String> generateNumber() {
         List<String> numbers = new ArrayList<>();
 
         while(numbers.size() != 3) {
@@ -35,5 +42,9 @@ public class ComputerPlayer {
             }
         }
         numbers.add(randomNum);
+    }
+
+    public String getNumbers() {
+        return StringUtils.join(numbers, "");
     }
 }

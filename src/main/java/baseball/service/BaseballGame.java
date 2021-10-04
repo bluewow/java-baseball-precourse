@@ -1,6 +1,7 @@
 package baseball.service;
 
 import baseball.model.PlayModel;
+import com.sun.deploy.util.StringUtils;
 
 import java.util.List;
 
@@ -9,29 +10,37 @@ import java.util.List;
  */
 public class BaseballGame {
 
+    private static final int MAX_BALL = 3;
     /**
      * 
      * @param playerInput 사용자 숫자입력 값
      * @param computerPlayer 컴퓨터 플레이어 숫자입력 값
      * @return
      */
-    public PlayModel play(String playerInput, List<String> computerPlayer) {
-        checkStrike();
-        checkBall();
-        checkOut();
+    public PlayModel play(String playerInput, String computerPlayer) {
+        int strikeCount = 0;
+        int ballCount = 0;
 
-        return new PlayModel(null, null, null);
+        for (int i = 0; i < MAX_BALL; i++) {
+            strikeCount += checkStrike(playerInput, computerPlayer, i);
+            ballCount += checkBall(playerInput, computerPlayer, i);
+        }
+
+        return new PlayModel(strikeCount, ballCount);
     }
 
-    private int checkOut() {
+    private int checkBall(String playerInput, String computerPlayer, int index) {
+        if(playerInput.charAt(index) != computerPlayer.charAt(index)
+                && computerPlayer.indexOf(playerInput.charAt(index)) != -1)
+            return 1;
+
         return 0;
     }
 
-    private int checkBall() {
-        return 0;
-    }
+    private int checkStrike(String playerInput, String computerPlayer, int index) {
+        if(playerInput.charAt(index) == computerPlayer.charAt(index))
+            return 1;
 
-    private int checkStrike() {
         return 0;
     }
 
