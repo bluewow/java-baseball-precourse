@@ -16,4 +16,13 @@ public class UserPlayer {
     }
 
 
+    public GameStatus continueOrTerminate() {
+        String input =  Console.readLine();
+        if(input.equals("1"))
+            return GameStatus.PLAY;
+        if(input.equals("2"))
+            return GameStatus.EXIT;
+
+        throw new IllegalArgumentException("잘못된 입력");
+    }
 }

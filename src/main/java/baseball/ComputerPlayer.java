@@ -7,6 +7,7 @@ public class ComputerPlayer {
     private String numbers = "";
 
     public void generateRandomNumbers() {
+        numbers = "";
         while (numbers.length() != 3) {
             updateNumbers();
         }

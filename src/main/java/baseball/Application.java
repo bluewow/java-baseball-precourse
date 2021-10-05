@@ -11,7 +11,7 @@ public class Application {
         do {
             baseballGame.init();
             baseballGame.play();
-//            baseballGame.finish();
+            baseballGame.finish();
         } while(baseballGame.getGameStatus() != GameStatus.EXIT);
     }
 }

@@ -1,5 +1,7 @@
 package baseball;
 
+import nextstep.utils.Console;
+
 public class BaseballGame {
     private UserPlayer userPlayer;
     private ComputerPlayer computerPlayer;
@@ -22,21 +24,16 @@ public class BaseballGame {
             String userInput = userPlayer.userCommand();
             String computerInput = computerPlayer.getNumbers();
 
-            System.out.println(computerInput);
             checkBall(userInput, computerInput);
+
             judgement.display();
             gameStatus = judgement.execute();
         }
     }
 
     public void finish() {
-
+        gameStatus = userPlayer.continueOrTerminate();
     }
-
-    private void judgement() {
-
-    }
-
 
     private int checkBall(String userInput, String computerInput, int index) {
         if(userInput.charAt(index) != computerInput.charAt(index)
