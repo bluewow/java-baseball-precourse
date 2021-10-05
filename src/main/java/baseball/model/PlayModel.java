@@ -20,8 +20,8 @@ public class PlayModel {
         return ball;
     }
 
-    public boolean isNotFinish() {
-        if(strike != 3)
+    public boolean isFinish() {
+        if(strike == 3)
             return true;
 
         return false;
