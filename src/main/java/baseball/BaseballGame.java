@@ -20,7 +20,6 @@ public class BaseballGame {
 
     public void play() {
         while(gameStatus == GameStatus.PLAY) {
-            System.out.print("숫자를 입력해주세요 : ");
             String userInput = userPlayer.userCommand();
             String computerInput = computerPlayer.getNumbers();
 
@@ -33,7 +32,12 @@ public class BaseballGame {
     }
 
     public void finish() {
-        gameStatus = userPlayer.continueOrTerminate();
+        try {
+            gameStatus = userPlayer.continueOrTerminate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            finish();
+        }
     }
 
     private int checkBall(String userInput, String computerInput, int index) {
