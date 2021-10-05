@@ -2,6 +2,8 @@ package baseball;
 
 import nextstep.utils.Console;
 
+import java.util.NoSuchElementException;
+
 public class BaseballGame {
     private UserPlayer userPlayer;
     private ComputerPlayer computerPlayer;
@@ -23,7 +25,6 @@ public class BaseballGame {
             String userInput = userPlayer.userCommand();
             String computerInput = computerPlayer.getNumbers();
 
-            System.out.println(computerInput);
             playball(userInput, computerInput);
 
             judgement.display();
@@ -32,12 +33,7 @@ public class BaseballGame {
     }
 
     public void finish() {
-        try {
-            gameStatus = userPlayer.continueOrTerminate();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            finish();
-        }
+        gameStatus = userPlayer.continueOrTerminate();
     }
 
     private int checkBall(String userInput, String computerInput, int index) {
