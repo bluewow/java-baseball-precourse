@@ -1,7 +1,7 @@
 package baseball;
 
 public enum GameStatus {
-    READY,
     PLAY,
+    STOP,
     EXIT
 }
