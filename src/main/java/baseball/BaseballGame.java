@@ -6,6 +6,8 @@ public class BaseballGame {
     private GameStatus gameStatus;
 
     public BaseballGame(UserPlayer userPlayer, ComputerPlayer computerPlayer) {
+        this.userPlayer = userPlayer;
+        this.computerPlayer = computerPlayer;
     }
 
     public void init() {
