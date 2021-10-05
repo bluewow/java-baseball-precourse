@@ -24,7 +24,8 @@ public class BaseballGame {
             String userInput = userPlayer.userCommand();
             String computerInput = computerPlayer.getNumbers();
 
-            checkBall(userInput, computerInput);
+            System.out.println(computerInput);
+            playball(userInput, computerInput);
 
             judgement.display();
             gameStatus = judgement.execute();
@@ -50,13 +51,13 @@ public class BaseballGame {
         return 0;
     }
 
-    private void checkBall(String userInput, String computerInput) {
+    private void playball(String userInput, String computerInput) {
         int strikeCount = 0;
         int ballCount = 0;
 
         for (int i = 0; i < 3; i++) {
             strikeCount += checkStrike(userInput, computerInput, i);
-            ballCount += checkBall(computerInput, computerInput, i);
+            ballCount += checkBall(userInput, computerInput, i);
         }
 
         judgement = new Judgement(strikeCount, ballCount);

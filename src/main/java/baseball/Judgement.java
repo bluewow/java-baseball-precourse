@@ -23,10 +23,7 @@ public class Judgement {
         String s = "";
 
         if(strikeCount > 0)
-            s += strikeCount + "스트라이크";
-
-        if(strikeCount > 0 && ballCount > 0)
-            s += " " + ballCount + "볼";
+            s += strikeCount + "스트라이크 ";
 
         if(ballCount > 0)
             s += ballCount + "볼";
